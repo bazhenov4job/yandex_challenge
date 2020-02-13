@@ -29,6 +29,7 @@ new_dict = {key: value for key, value in vars(args).items()}
 
 
 def new_cell(board, i, j, cell):
+    # Функция возвращает состояние клетки исходя из состояния соседей
     neighbors = []
     neighbors_shift = range(-1, 2)
     for k in neighbors_shift:
@@ -83,6 +84,8 @@ while True:
     for i in range(N):
         for j in range(M):
             new_board[i][j] = new_cell(board, i, j, board[i][j])
+
+    # держим коней пока не пройдёт секунда
     while (time.time() - new_time) < 1:
         pass
     else:
